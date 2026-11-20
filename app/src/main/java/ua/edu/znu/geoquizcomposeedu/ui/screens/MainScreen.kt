@@ -69,7 +69,7 @@ fun MainScreen(
                 .padding(16.dp)
 //                .testTag(TestTags.QUESTION_TEXT)
                 .semantics {
-                    contentDescription = TestTags.QUESTION_TEXT
+                    contentDescription = TestTags.FIRST_QUESTION_TEXT
                 }
         )
         Row(

@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -28,27 +29,38 @@ android {
                 "proguard-rules.pro"
             )
         }
-//        create("profile") {
-//            initWith(getByName("debug"))
-//            isDebuggable = false
-//            isProfileable = true
-//        }
+
+        // create("profile") {
+        //     initWith(getByName("debug"))
+        //     isDebuggable = false
+        //     isProfileable = true
+        // }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-//    kotlin {
-//        jvmToolchain(11)
-//    }
+
+    // kotlin {
+    //     jvmToolchain(11)
+    // }
+
     buildFeatures {
         compose = true
     }
-//    compileSdkMinor = 0
+
+    // Налаштування локального модульного тестування JUnit 4
+    testOptions {
+        unitTests {
+            isReturnDefaultValues = true
+        }
+    }
+
+    // compileSdkMinor = 0
 }
 
 dependencies {
-
     implementation(project(":shared"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
